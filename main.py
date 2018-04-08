@@ -40,6 +40,26 @@ async def on_message(message):
 	if message.content.lower().startswith("m:uptime"):
 		await client.send_message(message.channel, "I am {0} hour/s and {1} minutes online on the server {2}.".format(hours, minutes, message.server))
 
+	#embed messages
+	#user info
+	if message.content.lower().startswith("m:user"):
+		try:
+			user = message.mentions[0]
+			userjoinedat = str(user.joined_at).split('.', 1)[0]
+			usercreatedat = str(user.created_at).split('.', 1)[0]
+			userembed = discord.Embed(title="Username:", description=user.name, color=0xe67e22)
+			userembed.set_author(name="User info")
+			userembed.add_field(name="Joined the server at: ",value=userjoinedat)
+			userembed.add_field(name="User created at:",value=usercreatedat)
+			userembed.add_field(name="Discriminator", value=user.discriminator)
+			userembed.add_field(name="UserID", value=user.id)
+			await client.send_message(message.channel, embed=userembed)
+		except IndexError:
+			await client.send_message(message.channel, "I was not able to find the username :( !")
+		except:
+			await client.send_message (message.channel, "Sorry there is an error!")
+		finally:
+			pass
 #moderation
 
 #fun
@@ -93,5 +113,5 @@ async def uptime():
 			hours += 1
 
 client.loop.create_task(uptime())
-client.run("")
+client.run("NDMxODM5NDcwMDMyMTI1OTUy.DatrOw.5Sb767ujOlwxKgFJBN_c-D-LA9s")
 
