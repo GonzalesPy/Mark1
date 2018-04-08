@@ -4,7 +4,6 @@ import random
 import io
 import requests
 import asyncio
-import safygiphy
 
 client = discord.Client()
 
@@ -94,5 +93,5 @@ async def uptime():
 			hours += 1
 
 client.loop.create_task(uptime())
-client.run("NDMxODM5NDcwMDMyMTI1OTUy.Daodow.DhsArTpPuP1LWEOZwzz4tblI_jA")
+client.run("")
 
