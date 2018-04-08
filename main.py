@@ -113,5 +113,5 @@ async def uptime():
 			hours += 1
 
 client.loop.create_task(uptime())
-client.run("NDMxODM5NDcwMDMyMTI1OTUy.DatrOw.5Sb767ujOlwxKgFJBN_c-D-LA9s")
+client.run("")
 
